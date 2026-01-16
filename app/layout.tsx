@@ -15,10 +15,11 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || undefined
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kavehammersmith.vercel.app'
 
 export const metadata: Metadata = {
   // Title tags optimized with a template
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'KAVE Café – Coffee. Food. Community.',
     template: '%s | KAVE Café'
