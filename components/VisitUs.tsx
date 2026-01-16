@@ -88,7 +88,7 @@ export default function VisitUs() {
             </div>
 
             <a
-              href="https://www.google.com/maps/place/Kave/@51.4932088,-0.2261491,17z"
+              href="https://www.google.com/maps/place/Kave,+Hammersmith+Broadway,+London/@51.4619,-0.3643221,14z/data=!4m5!3m4!1s0x48760fe0eba02649:0x711c97e0bc8ccbed!8m2!3d51.4932055!4d-0.2235688?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-8 px-8 py-4 bg-charcoal text-cream rounded-full font-medium hover:bg-charcoal/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
