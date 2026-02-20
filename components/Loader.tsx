@@ -256,10 +256,6 @@ export default function Loader() {
                   backgroundColor: '#94A57B',
                   animation: `dotPulse 1.4s ease-in-out infinite`,
                   animationDelay: `${i * 0.2}s`,
-                  keyframes: `@keyframes dotPulse {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 0.9; }
-                  }`,
                 }}
               />
             ))}
