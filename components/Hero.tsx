@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -22,33 +22,36 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal/65 via-charcoal/55 to-charcoal/75" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+      <div className="relative z-10 mx-auto max-w-5xl animate-fade-in px-4 text-center sm:px-6 lg:px-8">
         <div className="mb-6 inline-block">
-          <span className="text-cream/80 text-sm font-semibold tracking-widest uppercase">Welcome to</span>
+          <span className="text-sm font-semibold uppercase tracking-widest text-cream/80">
+            Welcome to
+          </span>
         </div>
-        
-        <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-cream mb-8 leading-tight drop-shadow-xl">
+
+        <h1 className="mb-8 font-heading text-6xl font-bold leading-tight text-cream drop-shadow-xl sm:text-7xl md:text-8xl lg:text-9xl">
           KAVE
         </h1>
-        
-        <p className="text-2xl sm:text-3xl md:text-4xl text-cream/95 mb-10 font-light drop-shadow-md leading-relaxed">
+
+        <p className="mb-10 text-2xl font-light leading-relaxed text-cream/95 drop-shadow-md sm:text-3xl md:text-4xl">
           Coffee. Food. Community.
         </p>
 
-        <p className="text-lg sm:text-xl text-cream/80 max-w-2xl mx-auto mb-14 font-light drop-shadow-md">
-          A vegetarian & halal café in the heart of Hammersmith, serving specialty coffee, toasties, smoothie bowls & waffles.
+        <p className="mx-auto mb-14 max-w-2xl text-lg font-light text-cream/80 drop-shadow-md sm:text-xl">
+          A vegetarian & halal café in the heart of Hammersmith, serving specialty coffee, toasties,
+          smoothie bowls & waffles.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
           <a
             href="#menu"
-            className="px-10 py-4 bg-cream text-charcoal rounded-lg font-semibold hover:bg-cream/95 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg"
+            className="rounded-lg bg-cream px-10 py-4 font-semibold text-charcoal shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-cream/95 hover:shadow-2xl"
           >
             Explore Menu
           </a>
           <a
             href="#visit"
-            className="px-10 py-4 bg-transparent border-2 border-cream text-cream rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+            className="rounded-lg border-2 border-cream bg-transparent px-10 py-4 font-semibold text-cream backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
           >
             Visit Us Now
           </a>
@@ -56,12 +59,11 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-        <div className="w-6 h-10 border-2 border-cream/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-cream/70 rounded-full mt-2" />
+      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 transform animate-bounce">
+        <div className="flex h-10 w-6 justify-center rounded-full border-2 border-cream/50">
+          <div className="mt-2 h-3 w-1 rounded-full bg-cream/70" />
         </div>
       </div>
     </section>
   )
 }
-

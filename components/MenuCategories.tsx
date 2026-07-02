@@ -36,14 +36,17 @@ export default function MenuCategories() {
   }, [])
 
   // Group items by category
-  const groupedMenu = menuItems.reduce((acc, item) => {
-    const category = item.category || 'Other'
-    if (!acc[category]) {
-      acc[category] = []
-    }
-    acc[category].push(item)
-    return acc
-  }, {} as Record<string, MenuItem[]>)
+  const groupedMenu = menuItems.reduce(
+    (acc, item) => {
+      const category = item.category || 'Other'
+      if (!acc[category]) {
+        acc[category] = []
+      }
+      acc[category].push(item)
+      return acc
+    },
+    {} as Record<string, MenuItem[]>
+  )
 
   const categories = Object.keys(groupedMenu)
 
@@ -55,39 +58,43 @@ export default function MenuCategories() {
   }, [loading, JSON.stringify(categories)])
 
   return (
-    <section id="menu" className="py-20 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-charcoal mb-4">
+    <section id="menu" className="bg-white py-20 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 animate-slide-up text-center">
+          <h2 className="mb-4 font-heading text-4xl font-bold text-charcoal md:text-5xl">
             Our Full Menu
           </h2>
-          <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-charcoal/70">
             Freshly made to order with the finest ingredients
           </p>
         </div>
 
         {loading ? (
-          <div className="text-center py-12">
-            <p className="text-charcoal/70 text-lg">Loading menu...</p>
+          <div className="py-12 text-center">
+            <p className="text-lg text-charcoal/70">Loading menu...</p>
           </div>
         ) : categories.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-charcoal/70 text-lg">Menu coming soon!</p>
+          <div className="py-12 text-center">
+            <p className="text-lg text-charcoal/70">Menu coming soon!</p>
           </div>
         ) : (
           <div className="space-y-8">
             {/* Mobile filter chips */}
-            <div className="md:hidden -mx-4 px-4 overflow-x-auto">
+            <div className="-mx-4 overflow-x-auto px-4 md:hidden">
               <div className="flex gap-3 pb-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     type="button"
-                    onClick={() => { setActiveCategory(cat); setShowAll(false); setSearch('') }}
-                    className={`px-4 py-2 rounded-full border text-sm font-semibold transition-colors ${
+                    onClick={() => {
+                      setActiveCategory(cat)
+                      setShowAll(false)
+                      setSearch('')
+                    }}
+                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
                       activeCategory === cat
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : 'bg-white text-charcoal border-gray-200 hover:bg-gray-50'
+                        ? 'border-emerald-600 bg-emerald-600 text-white'
+                        : 'border-gray-200 bg-white text-charcoal hover:bg-gray-50'
                     }`}
                   >
                     {cat}
@@ -97,24 +104,28 @@ export default function MenuCategories() {
             </div>
 
             {/* Desktop layout: sidebar + content */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
               {/* Sidebar */}
-              <aside className="hidden md:block md:col-span-3 lg:col-span-3">
+              <aside className="hidden md:col-span-3 md:block lg:col-span-3">
                 <div className="sticky top-24 space-y-2">
                   {categories.map((cat) => (
                     <button
                       key={cat}
                       type="button"
-                      onClick={() => { setActiveCategory(cat); setShowAll(false); setSearch('') }}
-                      className={`w-full text-left px-4 py-3 rounded-xl border font-semibold transition-all ${
+                      onClick={() => {
+                        setActiveCategory(cat)
+                        setShowAll(false)
+                        setSearch('')
+                      }}
+                      className={`w-full rounded-xl border px-4 py-3 text-left font-semibold transition-all ${
                         activeCategory === cat
-                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                          : 'bg-white text-charcoal border-gray-200 hover:bg-gray-50'
+                          ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+                          : 'border-gray-200 bg-white text-charcoal hover:bg-gray-50'
                       }`}
                     >
                       <div className="flex items-center justify-between">
                         <span>{cat}</span>
-                        <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                        <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">
                           {groupedMenu[cat].length}
                         </span>
                       </div>
@@ -126,20 +137,25 @@ export default function MenuCategories() {
               {/* Content */}
               <div className="md:col-span-9">
                 {/* Header + search */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                   <div>
-                    <h3 className="font-heading text-2xl md:text-3xl font-bold text-charcoal">
+                    <h3 className="font-heading text-2xl font-bold text-charcoal md:text-3xl">
                       {activeCategory}
                     </h3>
-                    <p className="text-charcoal/60 text-sm">{groupedMenu[activeCategory]?.length || 0} items</p>
+                    <p className="text-sm text-charcoal/60">
+                      {groupedMenu[activeCategory]?.length || 0} items
+                    </p>
                   </div>
-                  <div className="relative max-w-sm w-full">
+                  <div className="relative w-full max-w-sm">
                     <input
                       type="text"
                       value={search}
-                      onChange={(e) => { setSearch(e.target.value); setShowAll(true) }}
+                      onChange={(e) => {
+                        setSearch(e.target.value)
+                        setShowAll(true)
+                      }}
                       placeholder="Search in this category..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-200 bg-white"
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                     />
                     <span className="absolute right-3 top-2.5 text-gray-400">⌕</span>
                   </div>
@@ -155,41 +171,39 @@ export default function MenuCategories() {
                   const canShowMore = filtered.length > INITIAL_ITEMS && !showAll
 
                   if (filtered.length === 0) {
-                    return (
-                      <div className="text-charcoal/60">No items match your search.</div>
-                    )
+                    return <div className="text-charcoal/60">No items match your search.</div>
                   }
 
                   return (
                     <>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
                         {visible.map((item, idx) => (
                           <div
                             key={`${activeCategory}-${idx}`}
-                            className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                            className="group rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                           >
                             <div className="mb-6">
-                              <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3 inline-block bg-emerald-50 px-4 py-2 rounded-full">
+                              <span className="mb-3 inline-block rounded-full bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-emerald-600">
                                 {item.category || activeCategory}
                               </span>
-                              <h4 className="font-heading text-2xl font-bold text-charcoal mb-2 group-hover:text-emerald-600 transition-colors">
+                              <h4 className="mb-2 font-heading text-2xl font-bold text-charcoal transition-colors group-hover:text-emerald-600">
                                 {item.name}
                               </h4>
                             </div>
-                            <p className="text-charcoal/70 leading-relaxed mb-6 text-base">
+                            <p className="mb-6 text-base leading-relaxed text-charcoal/70">
                               {item.description}
                             </p>
-                            <div className="mb-6 relative h-56 rounded-2xl overflow-hidden">
+                            <div className="relative mb-6 h-56 overflow-hidden rounded-2xl">
                               <Image
                                 src={item.image}
                                 alt={`${item.name} – ${item.description}`}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 loading="lazy"
                               />
                             </div>
-                            <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                            <div className="flex items-center justify-between border-t border-gray-100 pt-6">
                               <span className="font-heading text-xl font-bold text-emerald-600">
                                 {item.price}
                               </span>
@@ -201,11 +215,11 @@ export default function MenuCategories() {
 
                       {/* Show more */}
                       {canShowMore && (
-                        <div className="flex justify-center mt-6">
+                        <div className="mt-6 flex justify-center">
                           <button
                             type="button"
                             onClick={() => setShowAll(true)}
-                            className="px-6 py-2 rounded-full border border-gray-200 text-charcoal hover:bg-gray-50 transition-colors text-sm font-semibold"
+                            className="rounded-full border border-gray-200 px-6 py-2 text-sm font-semibold text-charcoal transition-colors hover:bg-gray-50"
                           >
                             Show all {filtered.length}
                           </button>
@@ -222,4 +236,3 @@ export default function MenuCategories() {
     </section>
   )
 }
-

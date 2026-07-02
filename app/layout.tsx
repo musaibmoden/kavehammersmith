@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({ 
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-space',
   weight: ['400', '500', '600', '700'],
@@ -22,9 +22,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: 'KAVE Café – Coffee. Food. Community.',
-    template: '%s | KAVE Café'
+    template: '%s | KAVE Café',
   },
-  description: 'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
+  description:
+    'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
   icons: {
     icon: '/kavetransparent.png',
   },
@@ -35,7 +36,8 @@ export const metadata: Metadata = {
     type: 'website',
     url: siteUrl,
     title: 'KAVE Café – Coffee. Food. Community.',
-    description: 'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
+    description:
+      'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
     siteName: 'KAVE Café',
     images: [
       {
@@ -49,18 +51,15 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'KAVE Café – Coffee. Food. Community.',
-    description: 'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
+    description:
+      'Vegetarian & halal café in Hammersmith serving specialty coffee, toasties, smoothie bowls & waffles.',
     images: ['/kave2.jpg'],
   },
   // Helpful metadata fields
   category: 'Food & Drink',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
@@ -141,8 +140,6 @@ export default function RootLayout({
 
         {children}
       </body>
-      
     </html>
   )
 }
-

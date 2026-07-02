@@ -24,14 +24,14 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm ${
+      className={`fixed left-0 right-0 top-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 ${
         isScrolled ? 'shadow-lg' : 'shadow-md'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center flex-shrink-0">
+          <a href="#home" className="flex flex-shrink-0 items-center">
             <Image
               src="/kavetransparent.png"
               alt="KAVE Logo"
@@ -43,22 +43,22 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-emerald-600 transition-all duration-200 text-sm font-semibold tracking-wide relative group"
+                className="group relative text-sm font-semibold tracking-wide text-gray-700 transition-all duration-200 hover:text-emerald-600"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-600 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-emerald-600 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <a
               href="https://www.ubereats.com/gb/store/kave-cafe/fsvnxZSXX76s6xAn_qoZOw?srsltid=AfmBOooZbhhdMmAAE0ssT92XvVTD53hcSLHFxpZzKiMJ8wJjuw7XwMzp"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm"
+              className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-emerald-700 hover:shadow-xl"
             >
               Order Now
             </a>
@@ -66,14 +66,14 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="rounded-lg p-2 transition-colors hover:bg-gray-100 md:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1.5">
+            <div className="flex h-6 w-6 flex-col justify-center space-y-1.5">
               <span
                 className={`block h-0.5 w-6 bg-gray-700 transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                  isMobileMenuOpen ? 'translate-y-2 rotate-45' : ''
                 }`}
               />
               <span
@@ -83,7 +83,7 @@ export default function Navigation() {
               />
               <span
                 className={`block h-0.5 w-6 bg-gray-700 transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                  isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''
                 }`}
               />
             </div>
@@ -92,16 +92,16 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 border-t border-gray-100 ${
+          className={`overflow-hidden border-t border-gray-100 transition-all duration-300 md:hidden ${
             isMobileMenuOpen ? 'max-h-96' : 'max-h-0'
           }`}
         >
-          <div className="bg-white/95 backdrop-blur-sm px-4 py-6 space-y-4">
+          <div className="space-y-4 bg-white/95 px-4 py-6 backdrop-blur-sm">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 hover:text-emerald-600 transition-colors duration-200 text-sm font-semibold"
+                className="block text-sm font-semibold text-gray-700 transition-colors duration-200 hover:text-emerald-600"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -111,7 +111,7 @@ export default function Navigation() {
               href="https://www.ubereats.com/gb/store/kave-cafe/fsvnxZSXX76s6xAn_qoZOw?srsltid=AfmBOooZbhhdMmAAE0ssT92XvVTD53hcSLHFxpZzKiMJ8wJjuw7XwMzp"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-emerald-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-emerald-700 transition-all duration-300 shadow-lg text-center text-sm"
+              className="block rounded-full bg-emerald-600 px-6 py-2.5 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-emerald-700"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Order Now
@@ -122,4 +122,3 @@ export default function Navigation() {
     </nav>
   )
 }
-

@@ -134,12 +134,8 @@ export default function Loader() {
         aria-label="Loading page"
       >
         {/* London Skyline Background - Subtle */}
-        <div className="absolute inset-0 opacity-5 overflow-hidden">
-          <svg
-            viewBox="0 0 1200 400"
-            className="w-full h-full"
-            preserveAspectRatio="none"
-          >
+        <div className="absolute inset-0 overflow-hidden opacity-5">
+          <svg viewBox="0 0 1200 400" className="h-full w-full" preserveAspectRatio="none">
             <defs>
               <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style={{ stopColor: '#f8f6f2', stopOpacity: 0.1 }} />
@@ -167,19 +163,19 @@ export default function Loader() {
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center justify-center">
           {/* Coffee Cup with Steam */}
-          <div className="relative w-24 h-32 sm:w-32 sm:h-40 mb-8">
+          <div className="relative mb-8 h-32 w-24 sm:h-40 sm:w-32">
             {/* Steam Trails */}
-            <div className="absolute left-4 top-0 w-4 h-16 sm:w-6 sm:h-20">
-              <div className="steam-trail-1 absolute inset-0 bg-gradient-to-t from-emerald-100 to-transparent rounded-full opacity-40 blur-md" />
+            <div className="absolute left-4 top-0 h-16 w-4 sm:h-20 sm:w-6">
+              <div className="steam-trail-1 absolute inset-0 rounded-full bg-gradient-to-t from-emerald-100 to-transparent opacity-40 blur-md" />
             </div>
 
-            <div className="absolute right-4 top-0 w-4 h-16 sm:w-6 sm:h-20">
-              <div className="steam-trail-2 absolute inset-0 bg-gradient-to-t from-emerald-100 to-transparent rounded-full opacity-40 blur-md" />
+            <div className="absolute right-4 top-0 h-16 w-4 sm:h-20 sm:w-6">
+              <div className="steam-trail-2 absolute inset-0 rounded-full bg-gradient-to-t from-emerald-100 to-transparent opacity-40 blur-md" />
             </div>
 
             {/* Coffee Cup SVG */}
             <svg
-              className="cup-icon w-full h-full"
+              className="cup-icon h-full w-full"
               viewBox="0 0 100 120"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -205,14 +201,7 @@ export default function Loader() {
               />
 
               {/* Coffee Inside */}
-              <ellipse
-                cx="50"
-                cy="70"
-                rx="20"
-                ry="12"
-                fill="#94A57B"
-                opacity="0.25"
-              />
+              <ellipse cx="50" cy="70" rx="20" ry="12" fill="#94A57B" opacity="0.25" />
 
               {/* Handle */}
               <path
@@ -225,23 +214,16 @@ export default function Loader() {
               />
 
               {/* Highlight on cup */}
-              <ellipse
-                cx="35"
-                cy="65"
-                rx="8"
-                ry="15"
-                fill="#94A57B"
-                opacity="0.2"
-              />
+              <ellipse cx="35" cy="65" rx="8" ry="15" fill="#94A57B" opacity="0.2" />
             </svg>
           </div>
 
           {/* Loading Text */}
-          <div className="loader-text text-center px-6 sm:px-8">
-            <p className="text-lg sm:text-xl font-serif text-slate-700 font-light tracking-wide">
+          <div className="loader-text px-6 text-center sm:px-8">
+            <p className="font-serif text-lg font-light tracking-wide text-slate-700 sm:text-xl">
               Brewing something special
             </p>
-            <p className="text-sm sm:text-base font-serif text-slate-600 font-light mt-1">
+            <p className="mt-1 font-serif text-sm font-light text-slate-600 sm:text-base">
               in London…
             </p>
           </div>
@@ -251,7 +233,7 @@ export default function Loader() {
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className="w-2 h-2 rounded-full"
+                className="h-2 w-2 rounded-full"
                 style={{
                   backgroundColor: '#94A57B',
                   animation: `dotPulse 1.4s ease-in-out infinite`,

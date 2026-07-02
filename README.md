@@ -12,11 +12,13 @@ A modern, production-ready homepage for KAVE - a vegetarian & halal café in Lon
 ## Getting Started
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -54,4 +56,3 @@ npm run dev
 npm run build
 npm start
 ```
-
