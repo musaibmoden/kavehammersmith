@@ -58,7 +58,7 @@ export default function MenuCategories() {
   }, [loading, JSON.stringify(categories)])
 
   return (
-    <section id="menu" className="bg-white py-20 md:py-32">
+    <section id="menu" className="scroll-mt-20 bg-white py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 animate-slide-up text-center">
           <h2 className="mb-4 font-heading text-4xl font-bold text-charcoal md:text-5xl">

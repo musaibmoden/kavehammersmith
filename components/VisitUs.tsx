@@ -41,7 +41,7 @@ export default function VisitUs() {
   }, [])
 
   return (
-    <section id="visit" className="bg-cream py-20 md:py-32">
+    <section id="visit" className="scroll-mt-20 bg-cream py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-12 text-center font-heading text-4xl font-bold text-charcoal md:text-5xl">
           Visit Us

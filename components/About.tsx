@@ -9,7 +9,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="bg-white py-28 md:py-40">
+    <section id="about" className="scroll-mt-20 bg-white py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-20 animate-slide-up text-center">
           <h2 className="mb-6 font-heading text-5xl font-bold text-charcoal md:text-6xl">
