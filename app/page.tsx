@@ -13,16 +13,11 @@ import Footer from '@/components/Footer'
 import BounceCards from '@/components/BounceCards'
 import Loader from '@/components/Loader'
 
-const images = [
-  'https://picsum.photos/400/400?grayscale',
-  'https://picsum.photos/500/500?grayscale',
-  'https://picsum.photos/600/600?grayscale',
-  'https://picsum.photos/700/700?grayscale',
-  'https://picsum.photos/300/300?grayscale',
-]
+// TODO: replace with actual high-quality dish/atmosphere shots from the client
+// when available. Current images are taken from /public.
+const images = ['/kave1.jpg', '/interior.avif', '/kave2.jpg', '/kavee3.jpg', '/product.png']
 
-// Real café images used for the mobile 2×2 grid.
-// Replace picsum images above (desktop BounceCards) separately in Fix 2.
+// Mobile 2×2 grid — same set of real café images as the desktop BounceCards.
 const mobileGalleryImages = [
   { src: '/kave1.jpg', alt: 'KAVE Café interior' },
   { src: '/interior.avif', alt: 'KAVE Café seating area' },
