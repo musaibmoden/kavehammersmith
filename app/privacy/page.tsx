@@ -73,7 +73,7 @@ export default function Privacy() {
           <section>
             <h2 className="text-2xl font-bold text-charcoal mb-4">7. Changes to This Privacy Policy</h2>
             <p>
-              We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date of this Privacy Policy. Your continued use of the Site following the posting of revised Privacy Policy means that you accept and agree to the changes.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by updating the &quot;Last Updated&quot; date of this Privacy Policy. Your continued use of the Site following the posting of revised Privacy Policy means that you accept and agree to the changes.
             </p>
             <p className="mt-4 text-sm text-charcoal/50">
               Last Updated: January 14, 2026

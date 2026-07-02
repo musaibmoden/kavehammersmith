@@ -30,7 +30,7 @@ export default function WhyKave() {
             Why Choose KAVE
           </h2>
           <p className="text-xl text-charcoal/60 max-w-3xl mx-auto">
-            We're committed to quality, inclusivity, and creating a space where everyone feels welcome
+            We&apos;re committed to quality, inclusivity, and creating a space where everyone feels welcome
           </p>
         </div>
 

@@ -35,10 +35,10 @@ export default function About() {
               A Café for Everyone
             </h3>
             <p className="text-lg text-charcoal/70 leading-relaxed mb-6 font-light">
-              KAVE is more than just a café—it's a community hub. We're dedicated to serving fresh, delicious food that everyone can enjoy. From early morning coffee lovers to afternoon catch-ups, we're here to create moments that matter.
+              KAVE is more than just a café—it&apos;s a community hub. We&apos;re dedicated to serving fresh, delicious food that everyone can enjoy. From early morning coffee lovers to afternoon catch-ups, we&apos;re here to create moments that matter.
             </p>
             <p className="text-lg text-charcoal/70 leading-relaxed font-light">
-              Our entire menu is vegetarian and halal-friendly, with abundant vegan options. We believe in quality over quantity, preparing every dish fresh to order with the finest ingredients. Whether you're fueling up before work or celebrating with friends, KAVE is your go-to destination.
+              Our entire menu is vegetarian and halal-friendly, with abundant vegan options. We believe in quality over quantity, preparing every dish fresh to order with the finest ingredients. Whether you&apos;re fueling up before work or celebrating with friends, KAVE is your go-to destination.
             </p>
           </div>
         </div>
